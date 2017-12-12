@@ -1,0 +1,125 @@
+/* Style.css -- from AK */
+
+
+body,.pri-bg{
+    background: #fff !important;
+}
+.sec-bg{
+    background:#0a0a0a !important;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.04);
+   border-radius: 3px;
+}
+.ter-bg{
+    background:#ff0078c4 !important;
+}
+
+.pri-btn{
+    padding: 1px 3px;
+    background: #ff0078;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+
+.tt{
+  font-size: 1.1rem;
+  color: whitesmoke;
+  text-transform: uppercase;
+  padding: 0 0 10px;
+  margin: 0;
+  text-align: center;
+  border-bottom: 1px solid #FF0078;
+  display: inline-block;
+}
+.album-title a{
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+.album-title a:hover{
+  color:#FF0078;
+}
+
+.liner {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #080808;
+    box-shadow: 0 1px 0 rgba(34, 34, 34, 0.8);
+    -webkit-box-shadow: 0 1px 0 rgba(34, 34, 34, 0.8);
+    margin-top: -2px;
+}
+
+
+.carousel-card {
+  position: relative;
+}
+
+.carousel-card .carousel-card-overlay {
+  
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  
+}
+
+.carousel-card:hover .content-overlay{
+  opacity: 1;
+}
+
+.carousel-card-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.carousel-card:hover .carousel-card-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+ 
+.carousel-card-details p,i{
+  color: #fff;
+  font-size: 1em;
+}
+
+.fadeIn-bottom{
+  top: 80%;
+}
+
+.fadeIn-top{
+  top: 20%;
+}
+
+.fadeIn-left{
+  left: 20%;
+}
+
+.fadeIn-right{
+  right: 80%;
+}
+
+/* Style.css ends here -- from AK */

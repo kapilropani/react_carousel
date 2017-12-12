@@ -20,8 +20,8 @@ config = {
           // test: /\.scss$|\.css$/,
           // exclude: /node_modules/,
           // loader: 'style-loader!css-loader!sass-loader',
-          test: /\.scss$/,
-          loaders: ['style-loader', 'css-loader', 'sass-loader']
+          test: /\.css$/,
+          loaders: ['style-loader', 'css-loader']
         }
       ]
     }

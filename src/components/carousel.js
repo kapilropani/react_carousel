@@ -1,173 +1,207 @@
-import React from 'react';
+
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import $ from 'jquery';
+import OwlCarousel from 'react-owl-carousel2';
 
-const { Component } = React;
-const { render } = ReactDOM;
 
-export class CarouselLeftArrow extends Component {
-  render() {
-    return (
-      <a
-        href="#"
-        className="carousel__arrow carousel__arrow--left"
-        onClick={this.props.onClick}
-      >
-        <span className="fa fa-2x fa-angle-left" />
-      </a>
-    );
-  }
-}
+import '../bootstrap/css/bootstrap.css'
+import '../bootstrap/css/owl.carousel.min.css';
+import '../bootstrap/css/owl.theme.default.min.css';
+import '../bootstrap/css/style.css';
 
-// Component for right arrow
-export class CarouselRightArrow extends Component {
-  render() {
-    return (
-      <a
-        href="#"
-        className="carousel__arrow carousel__arrow--right"
-        onClick={this.props.onClick}
-      >
-        <span className="fa fa-2x fa-angle-right" />
-      </a>
-    );
-  }
-}
+export default class Carousel2 extends Component {
+	
+	constructor(props, context) {
+		super(props, context);
+		
+		this.state = {
+			items: [
+				// <div key={1} className="item"><img src="https://goo.gl/vkVMvy" alt="The Last of us" /></div>,
+				// <div key={2} className="item"><img src="https://goo.gl/4XRLxU" alt="GTA V" /></div>,
+				// <div key={3} className="item"><img src="https://goo.gl/TcVXjx" alt="Mirror Edge" /></div>,
+				// <div key={4} className="item"><img src="https://goo.gl/rd3YCH" alt="Mirror Edge" /></div>
+				
+        <div key={1} className="item">
+          <div className="carousel-card">
+            <div className="carousel-card-overlay"></div>
+            <img src="https://goo.gl/CyeZi2"/>
+            <div className="carousel-card-details fadeIn-bottom">
+              <i className="fa fa-music" aria-hidden="true"></i>
+              <p className="carousel-card-text">This is a short description</p>
+            </div>
+          </div>
+              <h6 className="album-title pt-3"><a href="">Tiger Zinda Hai – 2017</a></h6>
+        </div>,
 
-// Component for carousel indicator
-export class CarouselIndicator extends Component {
-  render() {
-    return (
-      <li>
-        <a
-          className={
-            this.props.index == this.props.activeIndex
-              ? "carousel__indicator carousel__indicator--active"
-              : "carousel__indicator"
-          }
-          onClick={this.props.onClick}
-        />
-      </li>
-    );
-  }
-}
+        <div key={2} className="item">
+        <div className="carousel-card">
+          <div className="carousel-card-overlay"></div>
+          <img src="https://goo.gl/11GCFp"/>
+          <div className="carousel-card-details fadeIn-bottom">
+            <i className="fa fa-music" aria-hidden="true"></i>
+            <p className="carousel-card-text">This is a short description</p>
+          </div>
+        </div>
+            <h6 className="album-title pt-3"><a href="">Tiger Zinda Hai – 2017</a></h6>
+        </div>,
 
-// Component for slide
-export class CarouselSlide extends Component {
-  render() {
-    return (
-      <li
-        className={
-          this.props.index == this.props.activeIndex
-            ? "carousel__slide carousel__slide--active"
-            : "carousel__slide"
-        }
-      >
-        <p className="carousel-slide__content">{this.props.slide.content}</p>
-
-        <p>
-          <strong className="carousel-slide__author">
-            {this.props.slide.author}
-          </strong>,
-          {" "}
-          <small className="carousel-slide__source">
-            {this.props.slide.source}
-          </small>
-        </p>
-      </li>
-    );
-  }
-}
-
-// Carousel component
-export class Carousel extends Component {
-  constructor(props) {
-    super(props);
-
-    this.goToSlide = this.goToSlide.bind(this);
-    this.goToPrevSlide = this.goToPrevSlide.bind(this);
-    this.goToNextSlide = this.goToNextSlide.bind(this);
-
-    this.state = {
-      activeIndex: 0
-    };
-  }
-
-  goToSlide(index) {
-    this.setState({
-      activeIndex: index
-    });
-  }
-
-  goToPrevSlide(e) {
-    e.preventDefault();
-
-    let index = this.state.activeIndex;
-    let { slides } = this.props;
-    let slidesLength = slides.length;
-
-    if (index < 1) {
-      index = slidesLength;
-    }
-
-    --index;
-
-    this.setState({
-      activeIndex: index
-    });
-  }
-
-  goToNextSlide(e) {
-    e.preventDefault();
-
-    let index = this.state.activeIndex;
-    let { slides } = this.props;
-    let slidesLength = slides.length - 1;
-
-    if (index === slidesLength) {
-      index = -1;
-    }
-
-    ++index;
-
-    this.setState({
-      activeIndex: index
-    });
-  }
-
-  render() {
-    return (
-      <div className="carousel">
-        <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
-
-        <ul className="carousel__slides">
-          {this.props.slides.map((slide, index) =>
-            <CarouselSlide
-              key={index}
-              index={index}
-              activeIndex={this.state.activeIndex}
-              slide={slide}
-            />
-          )}
-        </ul>
-
-        <CarouselRightArrow onClick={e => this.goToNextSlide(e)} />
-
-        <ul className="carousel__indicators">
-          {this.props.slides.map((slide, index) =>
-            <CarouselIndicator
-              key={index}
-              index={index}
-              activeIndex={this.state.activeIndex}
-              onClick={e => this.goToSlide(index)}
-            />
-          )}
-        </ul>
+      <div key={3} className="item">
+      <div className="carousel-card">
+        <div className="carousel-card-overlay"></div>
+        <img src="https://goo.gl/okB1ML"/>
+        <div className="carousel-card-details fadeIn-bottom">
+          <i className="fa fa-music" aria-hidden="true"></i>
+          <p className="carousel-card-text">This is a short description</p>
+        </div>
       </div>
-    );
-  }
+          <h6 className="album-title pt-3"><a href="">Tiger Zinda Hai – 2017</a></h6>
+      </div>,
+
+      <div key={4} className="item">
+      <div className="carousel-card">
+      <div className="carousel-card-overlay"></div>
+      <img src="https://goo.gl/maLjVe"/>
+      <div className="carousel-card-details fadeIn-bottom">
+        <i className="fa fa-music" aria-hidden="true"></i>
+        <p className="carousel-card-text">This is a short description</p>
+      </div>
+      </div>
+        <h6 className="album-title pt-3"><a href="">Tiger Zinda Hai – 2017</a></h6>
+      </div>,
+
+      <div key={5} className="item">
+      <div className="carousel-card">
+      <div className="carousel-card-overlay"></div>
+      <img src="https://goo.gl/11GCFp"/>
+      <div className="carousel-card-details fadeIn-bottom">
+        <i className="fa fa-music" aria-hidden="true"></i>
+        <p className="carousel-card-text">This is a short description</p>
+      </div>
+      </div>
+        <h6 className="album-title pt-3"><a href="">Tiger Zinda Hai – 2017</a></h6>
+      </div>,
+
+      <div key={6} className="item">
+      <div className="carousel-card">
+      <div className="carousel-card-overlay"></div>
+      <img src="https://goo.gl/okB1ML"/>
+      <div className="carousel-card-details fadeIn-bottom">
+      <i className="fa fa-music" aria-hidden="true"></i>
+      <p className="carousel-card-text">This is a short description</p>
+      </div>
+      </div>
+      <h6 className="album-title pt-3"><a href="">Tiger Zinda Hai – 2017</a></h6>
+      </div>,
+
+      <div key={7} className="item">
+      <div className="carousel-card">
+      <div className="carousel-card-overlay"></div>
+      <img src="https://goo.gl/maLjVe"/>
+      <div className="carousel-card-details fadeIn-bottom">
+      <i className="fa fa-music" aria-hidden="true"></i>
+      <p className="carousel-card-text">This is a short description</p>
+      </div>
+      </div>
+      <h6 className="album-title pt-3"><a href="">Tiger Zinda Hai – 2017</a></h6>
+      </div>,
+
+      <div key={8} className="item">
+      <div className="carousel-card">
+        <div className="carousel-card-overlay"></div>
+        <img src="https://goo.gl/CyeZi2"/>
+        <div className="carousel-card-details fadeIn-bottom">
+          <i className="fa fa-music" aria-hidden="true"></i>
+          <p className="carousel-card-text">This is a short description</p>
+        </div>
+      </div>
+          <h6 className="album-title pt-3"><a href="">Tiger Zinda Hai – 2017</a></h6>
+      </div>
+									
+      ],
+
+      itemNo: 5,
+      loop: true,
+      margin: 10,
+      navigation : false,
+      resp: {
+
+        0: {
+          items: 2,
+          margin: 10,
+          nav: true
+
+        },
+
+        450: {
+          items: 3,
+          margin: 10,
+          nav: true
+        },
+
+        650: {
+          items: 4,
+          margin: 10,
+          nav: true
+        },
+
+        800: {
+          items: 4,
+          margin: 10,
+          nav: true
+        },
+
+        1000: {
+          items: 5,
+          margin: 10,
+          nav: true
+        },
+
+        1400: {
+          items: 5,
+          margin: 20,
+          nav: true
+        }
+      }
+
+		};
+	}
+
+	render() {
+		
+		const options = {
+			items: this.state.itemNo,
+			loop: this.state.loop,
+			nav: this.state.navigation,
+			rewind: this.state.rewind,
+      autoplay: this.state.autoplay,
+      responsive: this.state.resp
+    };
+    
+		return (
+			<div className="container mt-5">
+			<div className="row m-0">
+				<div className="col-md-8 sec-bg">
+					<div className="row">
+						<div className="col-md-12 pt-3">
+							<h5 className="tt">Bollywood New Releases</h5>
+							<span className="liner"></span>
+							<div className="owl-carousel owl-theme mt-3">
+								<OwlCarousel ref="car" options={options} className="carousle-card">
+									{this.state.items}
+								</OwlCarousel>
+			 				</div>
+                <div className="btn btn-sm pri-btn ter-bg mt-2 mb-3 float-right" >
+                  <a href="https://bestsongs.pk/songs/category/bollywood-new-releases">View All ❯❯</a>
+                </div>
+			 				</div>
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+
+		);
+	}
 }
 
-// Render Carousel component
-// render(<Carousel slides={carouselSlidesData} />, carouselContainer);
-
-// module.exports = Carousel;
+// ReactDOM.render(<App />, document.getElementById('root'));

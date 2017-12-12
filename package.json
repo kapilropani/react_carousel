@@ -4,7 +4,7 @@
   "description": "",
   "main": "carousel.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack"
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "kapilropani",
@@ -21,6 +21,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-react": "^6.24.1",
+    "react-owl-carousel2": "^0.2.1",
     "sass-loader": "^6.0.6",
     "scss-loader": "0.0.1",
     "webpack": "^3.10.0"
