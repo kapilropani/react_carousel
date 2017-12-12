@@ -1471,8 +1471,9 @@ var _carousel2 = _interopRequireDefault(_carousel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _reactDom.render)(_react2.default.createElement(_carousel2.default, null), document.getElementById("carousel-container"));
-(0, _reactDom.render)(_react2.default.createElement(_carousel2.default, null), document.getElementById("carousel-container"));
+(0, _reactDom.render)(_react2.default.createElement(_carousel2.default, null), document.getElementById("carousel-container1"));
+_react2.default.createElement('br', null);
+(0, _reactDom.render)(_react2.default.createElement(_carousel2.default, null), document.getElementById("carousel-container2"));
 
 /***/ }),
 /* 19 */
@@ -19042,7 +19043,7 @@ var Carousel2 = function (_Component) {
 
         1400: {
           items: 5,
-          margin: 20,
+          margin: 10,
           nav: true
         }
       }

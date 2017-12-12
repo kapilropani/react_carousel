@@ -159,7 +159,7 @@ export default class Carousel2 extends Component {
 
         1400: {
           items: 5,
-          margin: 20,
+          margin: 10,
           nav: true
         }
       }
